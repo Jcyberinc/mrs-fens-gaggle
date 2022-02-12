@@ -19,7 +19,7 @@
                 <b-progress
                   :value="honk"
                   :max="100"
-                  variant="info"
+                  variant="warning"
                   striped
                   animated
                 ></b-progress>
@@ -31,7 +31,7 @@
                 <b-progress
                   :value="wingspan"
                   :max="100"
-                  variant="info"
+                  variant="warning"
                   striped
                   animated
                 ></b-progress>
@@ -43,7 +43,7 @@
                 <b-progress
                   :value="neck"
                   :max="100"
-                  variant="info"
+                  variant="warning"
                   striped
                   animated
                 ></b-progress>
