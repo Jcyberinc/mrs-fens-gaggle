@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import GooseComponent from '@/components/Goose.vue';
+import Vue from 'vue';
 
 class Goose {
   name: string
@@ -87,7 +88,7 @@ class HatType {
   }
 }
 
-export default {
+export default Vue.extend({
   name: 'Home',
   components: {
     GooseComponent
@@ -115,7 +116,7 @@ export default {
   methods: {
     spawnGoose() {
       window.setTimeout(this.spawnGoose, 60_000);
-      let goose = new Goose('Goose');
+      let goose = new Goose('Goose', 50, 30, 10, require("@/assets/goosefinal.png"));
       window.setTimeout(() => goose.leave(this.geese), 210_000)
       this.geese.push(goose);
     }
@@ -123,5 +124,5 @@ export default {
   mounted () {
     window.setTimeout(this.spawnGoose, 30_000);
   }
-}
+});
 </script>
