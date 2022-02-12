@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <p> Sussy Amongus </p>
-    <b> Your mother and me </b>
+    <i><b> Your mother and me </b></i>
     <p> A saga to be remembered </p>
     <p> uwu :> </p>
     <HelloWorld msg="Mrs. Fens' Gaggle"/>
