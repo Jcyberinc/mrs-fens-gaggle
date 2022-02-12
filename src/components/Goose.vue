@@ -43,8 +43,8 @@ props: {
     honk: Number,
     wingspan: Number,
     neck: Number,
-    cool: Number,
     cute: Number,
+    cool: Number,
     sprite: String
   }
 }
