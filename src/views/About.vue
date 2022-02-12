@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class = "strokeme"> Mrs. Fens' Gaggle Production Staff</h1>
+    <h1 class = "strokeme"> Ms. Fens' Gaggle Production Staff</h1>
     <div class = "statsandother">
     <h3>
     <h2 class="strokeme">Project Lead:</h2>
