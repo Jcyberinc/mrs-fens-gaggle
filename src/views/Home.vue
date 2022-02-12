@@ -3,6 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <p> Sussy Amongus </p>
     <p> Your mother and me </p>
+    <p> A saga to be remembered </p>
     <HelloWorld msg="Mrs. Fens' Gaggle"/>
   </div>
 </template>
