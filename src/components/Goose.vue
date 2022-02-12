@@ -12,17 +12,14 @@
         <tr>
         <td>&nbsp;Honk
 >>>>>>> Stashed changes
-            <b-progress :value="honk" :max=100 show-progress animated></b-progress>
         </td>
         </tr>
         <tr>
         <td>&nbsp;Wingspan
-            <b-progress :value="wingspan" :max=100 show-progress animated></b-progress>
         </td>
         </tr>
         <tr>
         <td>&nbsp;Neck Size
-            <b-progress :value="neck" :max=100 show-progress animated></b-progress>
         </td>
         </tr>
         </tbody>
