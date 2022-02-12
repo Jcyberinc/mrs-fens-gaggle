@@ -2,8 +2,18 @@
     <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
         <img alt="Goose image" src="../assets/goose.png" style="transform: scale(0.5);" /> 
         <h3> {{ name }} </h3>
-        <h5> Honk </h5>
-        <b-progress :value=honk :max=100 show-value class="mb-3"></b-progress>
+        <div>
+            <h5> Honk </h5>
+            <b-progress :value="honk" :max=100 show-progress animated></b-progress>
+        </div>
+        <div>
+            <h5> Wingspan </h5>
+            <b-progress :value="wingspan" :max=100 show-progress animated></b-progress>
+        </div>
+        <div>
+            <h5> Neck Size </h5>
+            <b-progress :value="neck" :max=100 show-progress animated></b-progress>
+        </div>
     </div>
 </template>
 
