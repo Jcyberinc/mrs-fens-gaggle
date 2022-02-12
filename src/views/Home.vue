@@ -158,15 +158,16 @@ export default Vue.extend({
       else return this.hats[0];
     },
     breeder(firstGoose: Goose, secondGoose: Goose, sprite: string) {
+      let hat = this.randomHat();
       this.geese.push(
         new Goose(
           randomName(),
           childGooseHelperHonk(firstGoose, secondGoose),
           childGooseHelperWingspan(firstGoose, secondGoose),
           childGooseHelperNeck(firstGoose, secondGoose),
-          randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-          randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-          sprite
+          hat.cute, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+          hat.cool, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+          hat.image
         )
       );
     },
