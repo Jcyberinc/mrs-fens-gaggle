@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img alt="Mrs. Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block; margin-bottom: 30px" /> 
-    <main style="display: flex; flex-flow: row wrap; justify-content: center; gap: 40px;">
+    <main style="display: flex; flex-flow: row wrap; justify-content: center; gap: 20px;">
       <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" />
     </main>
   </div>
