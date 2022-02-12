@@ -60,6 +60,17 @@
   margin-left:190px;
 }
 
+.credits {
+  font-size: 20px;
+  color: #2346a8; 
+  text-shadow:
+  -1px -1px 0 #c0f6ff,
+  1px -1px 0 #c0f6ff,
+  -1px 1px 0 #c0f6ff,
+  1px 1px 0 #c0f6ff;
+
+}
+
 #nav {
   padding: 30px;
 }

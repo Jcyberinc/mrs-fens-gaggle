@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1 class = "strokeme"> Ms. Fens' Gaggle Production Staff</h1>
-    <div class = "statsandother">
+    <div class = "credits">
     <h3>
     <h2 class="strokeme">Project Lead:</h2>
     <p>Derek Kaplan</p>
