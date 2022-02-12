@@ -93,7 +93,7 @@ export default {
     fertile: {
       type: Boolean,
       default: true,
-    },
+    }
   },
 };
 </script>

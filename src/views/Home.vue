@@ -6,7 +6,7 @@
       style="dis
       play: inline-block; transform: scale(0.5); margin-bottom: 30px"
     />
-    
+
     <main
       style="
         display: flex;
@@ -44,6 +44,7 @@ class Goose {
   cute: number;
   cool: number;
   sprite: string;
+  hatID: number;
   constructor(
     name: string,
     honk: number,
@@ -51,19 +52,21 @@ class Goose {
     neck: number,
     cute: number,
     cool: number,
-    sprite: string
+    sprite: string,
+    hatID: number
   ) {
     this.name = name;
     this.honk = honk;
     this.wingspan = wingspan;
     this.neck = neck;
-    this.cute = 100 - honk + (100 - wingspan) + (100 - neck) + cute * 10;
+    this.cute = (100 - honk) + (100 - wingspan) + (100 - neck) + (cute * 10);
     if (neck > 75) {
-      this.cool = honk + wingspan + cool * 10 - 100;
+      this.cool = honk + wingspan + (cool * 10) - 50;
     } else {
-      this.cool = honk + wingspan + neck + cool * 10;
+      this.cool = honk + wingspan + neck + (cool * 10);
     }
     this.sprite = sprite;
+    this.hatID = hatID;
   }
 
   leave(geese: Goose[]) {
@@ -114,11 +117,13 @@ function randomName(): string {
 }
 
 class HatType {
+  id: number;
   name: string;
   image: string;
   cute: number;
   cool: number;
-  constructor(name: string, image: string, cute: number, cool: number) {
+  constructor(id: number, name: string, image: string, cute: number, cool: number) {
+    this.id = id;
     this.name = name;
     this.image = image;
     this.cute = cute;
@@ -133,7 +138,7 @@ export default Vue.extend({
   },
   methods: {
     spawnGoose() {
-      window.setTimeout(this.spawnGoose, 60_000);
+      window.setTimeout(this.spawnGoose, 6_000);
       let goose = this.randomStatGen();
       window.setTimeout(() => goose.leave(this.geese), 210_000);
       this.geese.push(goose);
@@ -148,7 +153,8 @@ export default Vue.extend({
         randomNum(),
         hat.cute,
         hat.cool,
-        hat.image
+        hat.image,
+        hat.id
       );
     },
     randomHat(): HatType {
@@ -157,8 +163,18 @@ export default Vue.extend({
         return this.hats[Math.floor(Math.random() * this.hats.length)];
       else return this.hats[0];
     },
+    childGooseHelperHat(firstGoose: Goose, secondGoose: Goose): HatType {
+      if (
+        firstGoose.sprite != require("@/assets/goosefinal.png") ||
+        secondGoose.sprite != require("@/assets/goosefinal.png")
+      ) {
+        return this.hats[Math.random() < 0.5 ? firstGoose.hatID : secondGoose.hatID];
+      } else {
+        return this.hats[0];
+      }
+    },
     breeder(firstGoose: Goose, secondGoose: Goose, sprite: string) {
-      let hat = this.randomHat();
+      let hat = this.childGooseHelperHat(firstGoose, secondGoose);
       this.geese.push(
         new Goose(
           randomName(),
@@ -167,38 +183,39 @@ export default Vue.extend({
           childGooseHelperNeck(firstGoose, secondGoose),
           hat.cute, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
           hat.cool, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-          hat.image
+          hat.image,
+          hat.id
         )
       );
     },
     addToBreedQueue(goose: Goose) {
-      if(this.breedQueue.length == 0) {
+      if (this.breedQueue.length == 0) {
         this.breedQueue.push(goose);
-      } else if(this.breedQueue.length == 1) {
-        if(goose != this.breedQueue[0]) {
+      } else if (this.breedQueue.length == 1) {
+        if (goose != this.breedQueue[0]) {
           this.breeder(goose, this.breedQueue[0], this.hats[0].image);
           this.breedQueue.splice(0);
         }
       }
-    }
+    },
   },
   data: function () {
     return {
       geese: Array<Goose>(),
       breedQueue: Array<Goose>(),
       hats: [
-        new HatType("No Hat", require("@/assets/goosefinal.png"), 0, 0),
-        new HatType("Propeller", require("@/assets/goosepropellor.png"), 7, -2),
-        new HatType("Top Hat", require("@/assets/goosetophat.png"), -3, 8),
-        new HatType("Bearskin", require("@/assets/goosebearskin.png"), -5, 10),
-        new HatType("Party Hat", require("@/assets/partygoose.png"), 6, -1),
-        new HatType("Crown", require("@/assets/kinggoose.png"), -2, 7),
-        new HatType("Bonnet", require("@/assets/babygoose.png"), 9, -4),
-        new HatType("Santa", require("@/assets/santagoose.png"), 6, -1),
-        new HatType("Chefs Hat", require("@/assets/chefgoose.png"), 1, 4),
-        new HatType("Frog Hat", require("@/assets/goosefroggy.png"), 10, -5),
+        new HatType(0, "No Hat", require("@/assets/goosefinal.png"), 0, 0),
+        new HatType(1, "Propeller", require("@/assets/goosepropellor.png"), 7, -2),
+        new HatType(2, "Top Hat", require("@/assets/goosetophat.png"), -3, 8),
+        new HatType(3, "Bearskin", require("@/assets/goosebearskin.png"), -5, 10),
+        new HatType(4, "Party Hat", require("@/assets/partygoose.png"), 6, -1),
+        new HatType(5, "Crown", require("@/assets/kinggoose.png"), -2, 7),
+        new HatType(6, "Bonnet", require("@/assets/babygoose.png"), 9, -4),
+        new HatType(7, "Santa", require("@/assets/santagoose.png"), 6, -1),
+        new HatType(8, "Chefs Hat", require("@/assets/chefgoose.png"), 1, 4),
+        new HatType(9, "Frog Hat", require("@/assets/goosefroggy.png"), 10, -5),
       ],
-      banana: new HatType(
+      banana: new HatType(10,
         "Rotten Banana",
         require("@/assets/bannanahosk.png"),
         -10,
@@ -215,7 +232,8 @@ export default Vue.extend({
       10,
       0,
       0,
-      require("@/assets/goosefinal.png")
+      require("@/assets/goosefinal.png"),
+      0
     );
     window.setTimeout(() => huey.leave(this.geese), 18_000);
     this.geese.push(huey);
