@@ -11,7 +11,7 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 40px;
       "
     >
       <GooseComponent
