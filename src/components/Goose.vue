@@ -12,48 +12,48 @@
       <img alt="Goose image" :src="sprite" style="transform: scale(0.5)" />
     </span>
     <div class="statsandother">
-    <span v-if="hover">
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              &nbsp;Honk
-              <b-progress
-                :value="honk"
-                :max="100"
-                variant="info"
-                striped
-                animated
-              ></b-progress>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              &nbsp;Wingspan
-              <b-progress
-                :value="wingspan"
-                :max="100"
-                variant="info"
-                striped
-                animated
-              ></b-progress>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              &nbsp;Neck Size
-              <b-progress
-                :value="neck"
-                :max="100"
-                variant="info"
-                striped
-                animated
-              ></b-progress>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </span>
+      <span v-if="hover">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                &nbsp;Honk
+                <b-progress
+                  :value="honk"
+                  :max="100"
+                  variant="info"
+                  striped
+                  animated
+                ></b-progress>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &nbsp;Wingspan
+                <b-progress
+                  :value="wingspan"
+                  :max="100"
+                  variant="info"
+                  striped
+                  animated
+                ></b-progress>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                &nbsp;Neck Size
+                <b-progress
+                  :value="neck"
+                  :max="100"
+                  variant="info"
+                  striped
+                  animated
+                ></b-progress>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </span>
     </div>
   </div>
 </template>
@@ -92,6 +92,10 @@ export default Vue.extend({
     cute: Number,
     cool: Number,
     sprite: String,
+    fertile: {
+      type: Boolean,
+      default: true,
+    },
   },
 });
 </script>

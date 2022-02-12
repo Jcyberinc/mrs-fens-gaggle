@@ -1,10 +1,12 @@
 <template>
   <div class="home">
     <img
-      alt="Mrs. Fens' Gaggle"
+      alt="Ms. Fens' Gaggle"
       src="@/assets/logo.png"
-      style="display: inline-block; transform: scale(0.5); margin-bottom: 30px"
+      style="dis
+      play: inline-block; transform: scale(0.5); margin-bottom: 30px"
     />
+    
     <main
       style="
         display: flex;
@@ -23,6 +25,7 @@
         :cute="goose.cute"
         :cool="goose.cool"
         :sprite="goose.sprite"
+        @click.native="addToBreedQueue(goose)"
       />
     </main>
   </div>
@@ -66,19 +69,6 @@ class Goose {
   leave(geese: Goose[]) {
     geese.splice(geese.indexOf(this), 1);
   }
-}
-
-// breeds geese
-function breeder(firstGoose: Goose, secondGoose: Goose, sprite: string): Goose {
-  return new Goose(
-    childGooseHelperName(firstGoose, secondGoose),
-    childGooseHelperHonk(firstGoose, secondGoose),
-    childGooseHelperWingspan(firstGoose, secondGoose),
-    childGooseHelperNeck(firstGoose, secondGoose),
-    randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-    randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-    sprite
-  );
 }
 
 // averages the honk stat vaule
@@ -143,9 +133,9 @@ export default Vue.extend({
   },
   methods: {
     spawnGoose() {
-      window.setTimeout(this.spawnGoose, 6_000);
+      window.setTimeout(this.spawnGoose, 60_000);
       let goose = this.randomStatGen();
-      window.setTimeout(() => goose.leave(this.geese), 21_000);
+      window.setTimeout(() => goose.leave(this.geese), 210_000);
       this.geese.push(goose);
     },
     // random stat generator for the spawning geese
@@ -167,10 +157,35 @@ export default Vue.extend({
         return this.hats[Math.floor(Math.random() * this.hats.length)];
       else return this.hats[0];
     },
+    breeder(firstGoose: Goose, secondGoose: Goose, sprite: string) {
+      let hat = this.randomHat();
+      this.geese.push(
+        new Goose(
+          randomName(),
+          childGooseHelperHonk(firstGoose, secondGoose),
+          childGooseHelperWingspan(firstGoose, secondGoose),
+          childGooseHelperNeck(firstGoose, secondGoose),
+          hat.cute, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+          hat.cool, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+          hat.image
+        )
+      );
+    },
+    addToBreedQueue(goose: Goose) {
+      if(this.breedQueue.length == 0) {
+        this.breedQueue.push(goose);
+      } else if(this.breedQueue.length == 1) {
+        if(goose != this.breedQueue[0]) {
+          this.breeder(goose, this.breedQueue[0], this.hats[0].image);
+          this.breedQueue.splice(0);
+        }
+      }
+    }
   },
   data: function () {
     return {
       geese: Array<Goose>(),
+      breedQueue: Array<Goose>(),
       hats: [
         new HatType("No Hat", require("@/assets/goosefinal.png"), 0, 0),
         new HatType("Propeller", require("@/assets/goosepropellor.png"), 7, -2),
