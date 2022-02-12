@@ -1,6 +1,6 @@
 <template>
     <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
-        <img alt="Goose image" src="../assets/goose.png" style="transform: scale(0.5);" /> 
+        <img alt="Goose image" :src="sprite" style="transform: scale(0.5);" /> 
         <h3> {{ name }} </h3>
         <table>
         <tbody>
