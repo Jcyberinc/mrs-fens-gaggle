@@ -3,7 +3,7 @@
         <span
         @mouseenter="hover = true"
         @mouseleave="hover = false">
-        <h3> {{ name }} </h3>
+        <h3> {{cuteString()}} {{ name }} </h3>
         <img alt="Goose image" :src="sprite" style="transform: scale(0.5);" />
         </span>
         <span v-if="hover">
@@ -36,7 +36,17 @@ export default {
       data() {
     return {
       hover: false,
+      isCute: (this.cute > this.cool)
     };
+  },
+  methods: {
+    cuteString() {
+        if(this.isCute) {
+            return "Cute"
+        } else {
+            return "Cool"
+        }
+    }
   },
 props: {
     name: String,
