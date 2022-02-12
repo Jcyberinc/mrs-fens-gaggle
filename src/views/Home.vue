@@ -11,6 +11,7 @@
 <script lang="ts">
 import GooseComponent from '@/components/Goose.vue';
 import { array as ManyNames } from '@/assets/names.json'; 
+import Vue from 'vue';
 
 class Goose {
   name: string
@@ -28,6 +29,10 @@ class Goose {
     this.cute = cute
     this.cool = cool
     this.sprite = sprite
+  }
+
+  leave(geese: Goose[]) {
+    geese.splice(geese.indexOf(this), 1);
   }
 }
 
@@ -64,7 +69,7 @@ function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
 
 // random stat generator for the spawning geese
 function randomStatGen(): Goose {
-  return new Goose("StubNameGen", randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), require("@/assets/goosefinal.png"))
+  return new Goose(randomName(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), require("@/assets/goosefinal.png"))
 }
 
 // creates the random number 
@@ -95,13 +100,18 @@ class HatType {
   }
 } 
 
-export default {
+export default Vue.extend({
   name: 'Home',
   components: {
     GooseComponent
   },
   methods: {
-    
+    spawnGoose() {
+      window.setTimeout(this.spawnGoose, 60_000);
+      let goose = randomStatGen();
+      window.setTimeout(() => goose.leave(this.geese), 210_000)
+      this.geese.push(goose);
+    }
   },
   data: function() {
     return {
@@ -122,6 +132,9 @@ export default {
         new HatType('Rotten Banana', require("@/assets/banangoose.png"), -10, -10)
       ]
     }
+  },
+  mounted () {
+    window.setTimeout(this.spawnGoose, 30_000);
   }
-}
+});
 </script>
