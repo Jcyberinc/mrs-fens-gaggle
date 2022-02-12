@@ -147,9 +147,9 @@ export default Vue.extend({
   },
   methods: {
     spawnGoose() {
-      window.setTimeout(this.spawnGoose, 6_000);
+      window.setTimeout(this.spawnGoose, 60_000);
       let goose = this.randomStatGen();
-      window.setTimeout(() => goose.leave(this.geese), 21_000);
+      window.setTimeout(() => goose.leave(this.geese), 210_000);
       this.geese.push(goose);
     },
     // random stat generator for the spawning geese
