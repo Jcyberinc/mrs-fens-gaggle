@@ -1,8 +1,13 @@
 <template>
-<div>
+  <div>
     <h1>Breeding</h1>
-    <button v-for="goose in geese" :key="goose.name"> {{goose.name}} </button>
-</div>
+      <table>
+        <tr>
+        <td> <button v-for="goose in geese" :key="goose.name"> {{goose.name}} </button>
+        </td>
+      </tr>
+      </table>
+  </div>
 </template>
 
 <script lang="ts">
