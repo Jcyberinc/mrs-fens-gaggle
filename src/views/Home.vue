@@ -80,7 +80,6 @@ export default {
   data: function() {
     return {
       geese: [
-        /* eslint-disable */
         new Goose('Huey', 50, 30, 10, require("@/assets/goosefinal.png"))
       ]
     }
