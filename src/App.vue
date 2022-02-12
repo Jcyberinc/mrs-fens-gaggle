@@ -17,11 +17,6 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #000000; 
-  text-shadow:
-    -1px -1px 0 rgb(255, 255, 255),
-    1px -1px 0 rgb(255, 255, 255),
-    -1px 1px 0 rgb(255, 255, 255),
-    1px 1px 0 rgb(255, 255, 255);  
 }
 
 
@@ -33,41 +28,22 @@
     @font-face { font-family: Monaco;
     src: url('~@/assets/monaco.ttf');}
 
-.strokeme
-{
-    text-shadow:
-    -1px -1px 0 rgb(255, 255, 255),
-    1px -1px 0 rgb(255, 255, 255),
-    -1px 1px 0 rgb(255, 255, 255),
-    1px 1px 0 rgb(255, 255, 255);  
-}
 
 .statsandother
 {
   font-size: 20px;
-  color: #2346a8; 
+  color: white; 
   background-color: rgba(100, 100, 100, 0.8);
   border-radius: 10px;
   padding: 10px;
   padding-top: 0px;
   margin-top: 30px;
-  text-shadow:
-  -1px -1px 0 #c0f6ff,
-  1px -1px 0 #c0f6ff,
-  -1px 1px 0 #c0f6ff,
-  1px 1px 0 #c0f6ff;
   position:absolute;
   margin-left:190px;
 }
 
 .credits {
   font-size: 20px;
-  color: #2346a8; 
-  text-shadow:
-  -1px -1px 0 #c0f6ff,
-  1px -1px 0 #c0f6ff,
-  -1px 1px 0 #c0f6ff,
-  1px 1px 0 #c0f6ff;
 
 }
 
@@ -77,11 +53,11 @@
 
 #nav a {
   font-weight: bold;
-  color: #d31525;
+  color: black ;
 }
 
 #nav a.router-link-exact-active {
-  color: #d311a2;
+  color: white;
 }
 
 main {
