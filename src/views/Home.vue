@@ -94,6 +94,9 @@ export default {
   components: {
     GooseComponent
   },
+  methods: {
+    
+  },
   data: function() {
     return {
       geese: [
