@@ -26,11 +26,11 @@ class Goose {
     this.honk = honk
     this.wingspan = wingspan
     this.neck = neck
-    this.cute = (100-honk) + (100-wingspan) + (100-neck) + cute
+    this.cute = (100-honk) + (100-wingspan) + (100-neck) + (cute * 10)
     if(neck>75){
-      this.cool = honk + wingspan + cool - 50
+      this.cool = honk + wingspan + (cool * 10) - 100
     } else {
-      this.cool = honk + wingspan + neck + cool
+      this.cool = honk + wingspan + neck + (cool * 10)
     }
     this.sprite = sprite
   }
@@ -71,14 +71,11 @@ function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
   return firstGoose.name
 } 
 
-// random stat generator for the spawning geese
-function randomStatGen(): Goose {
-  return new Goose(randomName(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), require("@/assets/goosefinal.png"))
-}
+
 
 // creates the random number 
 function randomNum(): number {
-  return Math.random() * 101 
+  return Math.floor(Math.random() * 101);
 }
 
 // name generator
@@ -111,17 +108,25 @@ export default Vue.extend({
   },
   methods: {
     spawnGoose() {
-      window.setTimeout(this.spawnGoose, 60_000);
-      let goose = randomStatGen();
-      window.setTimeout(() => goose.leave(this.geese), 210_000)
+      window.setTimeout(this.spawnGoose, 6_000);
+      let goose = this.randomStatGen();
+      window.setTimeout(() => goose.leave(this.geese), 21_000)
       this.geese.push(goose);
+    },
+    // random stat generator for the spawning geese
+    randomStatGen(): Goose {
+      let hat = this.randomHat();
+      return new Goose(randomName(), randomNum(), randomNum(), randomNum(), hat.cute, hat.cool, hat.image)
+    },
+    randomHat(): HatType {
+      if (Math.random() < 0.001) return this.banana;
+      if (Math.random() < 0.1) return this.hats[Math.floor(Math.random() * this.hats.length)];
+      else return this.hats[0];
     }
   },
   data: function() {
     return {
-      geese: [
-        new Goose('Huey', 50, 30, 10, 0, 0, require("@/assets/goosefinal.png"))
-      ],
+      geese: Array<Goose>(),
       hats: [
         new HatType('No Hat', require("@/assets/goosefinal.png"), 0, 0),
         new HatType('Propeller', require("@/assets/goosepropellor.png"), 7, -2),
@@ -133,12 +138,15 @@ export default Vue.extend({
         new HatType('Santa', require("@/assets/santagoose.png"), 6, -1),
         new HatType('Chefs Hat', require("@/assets/chefgoose.png"), 1, 4),
         new HatType('Frog Hat', require("@/assets/chefgoose.png"), 10, -5),
-        new HatType('Rotten Banana', require("@/assets/banangoose.png"), -10, -10)
-      ]
+      ],
+      banana: new HatType('Rotten Banana', require("@/assets/banangoose.png"), -10, -10)
     }
   },
   mounted () {
-    window.setTimeout(this.spawnGoose, 30_000);
+    window.setTimeout(this.spawnGoose, 3_000);
+    let huey = new Goose('Huey', 50, 30, 10, 0, 0, require("@/assets/goosefinal.png"));
+    window.setTimeout(() => huey.leave(this.geese), 18_000);
+    this.geese.push(huey);
   }
 });
 </script>
