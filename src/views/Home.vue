@@ -23,6 +23,34 @@ class Goose {
   }
 }
 
+  function childGoose(firstGoose: Goose, secondGoose : Goose) {
+    return new Goose(childGooseHelperName(firstGoose, secondGoose),
+    childGooseHelperHonk(firstGoose, secondGoose),
+    childGooseHelperWingspan(firstGoose, secondGoose),
+    childGooseHelperNeck(firstGoose, secondGoose))
+  }  
+
+// averages the honk stat vaule 
+  function childGooseHelperHonk(firstGoose: Goose , secondGoose: Goose) {
+    return Math.round((firstGoose.honk + firstGoose.honk)/ 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
+  }
+
+// averages the wingspan stat value
+  function childGooseHelperWingspan(firstGoose: Goose, secondGoose: Goose) {
+    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
+  }
+
+// averages the neck stat value
+  function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose) {
+    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2)  + (Math.floor(Math.random() * (10 - -10 )) + -10)
+  }
+
+ // STUB FIX NAME RANDOMIZER 
+  function childGooseHelperName(firstGoose: Goose, secondGoose: Goose) {
+    return firstGoose.name
+  } 
+
+
 class HatType {
 
 }
