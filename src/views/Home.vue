@@ -25,8 +25,7 @@ export default {
       geese: [
         new Goose('Huey'),
         new Goose('Dewey'),
-        new Goose('Louie'),
-        new Goose('poggers')
+        new Goose('Louie')
       ]
     }
   }
