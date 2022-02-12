@@ -71,14 +71,11 @@ function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
   return firstGoose.name
 } 
 
-// random stat generator for the spawning geese
-function randomStatGen(): Goose {
-  return new Goose(randomName(), randomNum(), randomNum(), randomNum(), randomNum(), randomNum(), require("@/assets/goosefinal.png"))
-}
+
 
 // creates the random number 
 function randomNum(): number {
-  return Math.random() * 101 
+  return Math.floor(Math.random() * 101);
 }
 
 // name generator
@@ -111,10 +108,19 @@ export default Vue.extend({
   },
   methods: {
     spawnGoose() {
-      window.setTimeout(this.spawnGoose, 60_000);
-      let goose = randomStatGen();
-      window.setTimeout(() => goose.leave(this.geese), 210_000)
+      window.setTimeout(this.spawnGoose, 6_000);
+      let goose = this.randomStatGen();
+      window.setTimeout(() => goose.leave(this.geese), 21_000)
       this.geese.push(goose);
+    },
+    // random stat generator for the spawning geese
+    randomStatGen(): Goose {
+      let hat = this.randomHat();
+      return new Goose(randomName(), randomNum(), randomNum(), randomNum(), hat.cute, hat.cool, hat.image)
+    },
+    randomHat(): HatType {
+      if (Math.random() < 0.1) return this.hats[Math.floor(Math.random() * this.hats.length)];
+      else return this.hats[0];
     }
   },
   data: function() {
@@ -138,7 +144,7 @@ export default Vue.extend({
     }
   },
   mounted () {
-    window.setTimeout(this.spawnGoose, 30_000);
+    window.setTimeout(this.spawnGoose, 3_000);
   }
 });
 </script>
