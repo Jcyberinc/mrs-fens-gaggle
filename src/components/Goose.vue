@@ -1,7 +1,6 @@
 <template>
   <div
     style="
-      height: 100px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -9,7 +8,7 @@
   >
     <span @mouseenter="hover = true" @mouseleave="hover = false">
       <h3>{{ status() }} {{ name }}</h3>
-      <img alt="Goose image" :src="sprite" style="transform: scale(0.5)" />
+      <img alt="Goose image" :src="sprite" height="150px"/>
     </span>
     <div class="statsandother">
       <span v-if="hover">
