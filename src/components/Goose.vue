@@ -11,6 +11,7 @@
       <h3>{{ status() }} {{ name }}</h3>
       <img alt="Goose image" :src="sprite" style="transform: scale(0.5)" />
     </span>
+    <div class="statsandother">
     <span v-if="hover">
       <table>
         <tbody>
@@ -53,6 +54,7 @@
         </tbody>
       </table>
     </span>
+    </div>
   </div>
 </template>
 
