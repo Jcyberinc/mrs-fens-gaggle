@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img alt="Mrs. Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block; margin-bottom: 30px" /> 
+    <img alt="Mrs. Fens' Gaggle" src="@/assets/logo.png" style="display: inline-block; transform: scale(0.5); margin-bottom: 30px;" /> 
     <main style="display: flex; flex-flow: row wrap; justify-content: center; gap: 20px;">
       <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" :honk="goose.honk"
       :wingspan="goose.wingspan" :neck="goose.neck" :cute="goose.cute" :cool="goose.cool" :sprite="goose.sprite"/>

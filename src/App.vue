@@ -17,6 +17,11 @@
   color: #c43c4e;
 }
 
+
+:root, body {
+  background-image: url(~@/assets/BACKGROUND.png);
+}
+
 #nav {
   padding: 30px;
 }
