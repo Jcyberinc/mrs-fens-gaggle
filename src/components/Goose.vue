@@ -11,8 +11,7 @@ props: {
     name: String,
     honk: Number,
     wingspan: Number,
-    neck: Number,
-    foot: Number,
+    neck: Number
   }
 }
 </script>
