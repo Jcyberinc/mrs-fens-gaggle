@@ -15,6 +15,10 @@ class Goose {
   constructor(name: string) {
     this.name = name
   }
+
+  leave(geese: Goose[]) {
+    geese.splice(geese.indexOf(this), 1);
+  }
 }
 
 class HatType {
@@ -42,6 +46,17 @@ export default {
         new Goose('Taz'),
       ]
     }
+  },
+  methods: {
+    spawnGoose() {
+      window.setTimeout(this.spawnGoose, 60_000);
+      let goose = new Goose('Goose');
+      window.setTimeout(() => goose.leave(this.geese), 210_000)
+      this.geese.push(goose);
+    }
+  },
+  mounted () {
+    window.setTimeout(this.spawnGoose, 30_000);
   }
 }
 </script>
