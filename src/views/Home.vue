@@ -39,24 +39,39 @@ class Goose {
   }  
 
 // averages the honk stat vaule 
-  function childGooseHelperHonk(firstGoose: Goose , secondGoose: Goose): number {
-    return Math.round((firstGoose.honk + firstGoose.honk)/ 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
-  }
+function childGooseHelperHonk(firstGoose: Goose , secondGoose: Goose): number {
+  return Math.round((firstGoose.honk + firstGoose.honk)/ 2) + (Math.floor(Math.random() * (11 - -10)) + -10)
+}
 
 // averages the wingspan stat value
-  function childGooseHelperWingspan(firstGoose: Goose, secondGoose: Goose): number {
-    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
-  }
+function childGooseHelperWingspan(firstGoose: Goose, secondGoose: Goose): number {
+  return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) + (Math.floor(Math.random() * (11 - -10)) + -10)
+}
 
 // averages the neck stat value
-  function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
-    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2)  + (Math.floor(Math.random() * (10 - -10 )) + -10)
-  }
+function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
+  return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2)  + (Math.floor(Math.random() * (11 - -10)) + -10)
+}
 
  // STUB FIX NAME RANDOMIZER 
-  function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
-    return firstGoose.name
-  } 
+function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
+  return firstGoose.name
+} 
+
+// random stat generator for the spawning geese
+function randomStatGen(): Goose {
+  return new Goose("StubNameGen", randomNum(), randomNum(), randomNum(), "no hat" )
+}
+
+// creates the random number 
+function randomNum(): number {
+  return Math.random() * 101 
+}
+
+// name generator
+
+
+
 
 
 class HatType {
@@ -81,6 +96,19 @@ export default {
     return {
       geese: [
         new Goose('Huey', 50, 30, 10, require("@/assets/goosefinal.png"))
+      ],
+      hats: [
+        new HatType('No Hat', "/@/assets/goosefinal.png", 0, 0),
+        new HatType('Propeller', "/@/assets/goosepropellor.png", 7, -2),
+        new HatType('Top Hat', "/@/assets/goosetophat.png", -3, 8),
+        new HatType('Bearskin', "/@/assets/goosebearskin.png", -5, 10),
+        new HatType('Party Hat', "/@/assets/partygoose.png", 6, -1),
+        new HatType('Crown', "/@/assets/kinggoose.png", -2, 7),
+        new HatType('Bonnet', "/@/assets/babygoose.png", 9, -4),
+        new HatType('Santa', "/@/assets/santagoose.png", 6, -1),
+        new HatType('Chefs Hat', "/@/assets/chefgoose.png", 1, 4),
+        new HatType('Frog Hat', "/@/assets/chefgoose.png", 10, -5),
+        new HatType('Rotten Banana', "/@/assets/bananagoose.png", -10, -10)
       ]
     }
   },
