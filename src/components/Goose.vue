@@ -1,28 +1,26 @@
 <template>
     <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
         <img alt="Goose image" src="../assets/goose.png" style="transform: scale(0.5);" /> 
-<<<<<<< Updated upstream
-        <h3> {{ name }} </h3> <!-- the {{}} mean it is code, so it's plugging in the value of name -->
-        <div>
-            <h5> Honk </h5>
-=======
         <h3> {{ name }} </h3>
         <table>
         <tbody>
         <tr>
         <td>&nbsp;Honk
->>>>>>> Stashed changes
+            <b-progress :value="honk" :max=100 show-progress animated></b-progress>
         </td>
         </tr>
         <tr>
         <td>&nbsp;Wingspan
+            <b-progress :value="wingspan" :max=100 show-progress animated></b-progress>
         </td>
         </tr>
         <tr>
         <td>&nbsp;Neck Size
+            <b-progress :value="neck" :max=100 show-progress animated></b-progress>
         </td>
         </tr>
         </tbody>
+        </table>
     </div>    
 </template>
 
