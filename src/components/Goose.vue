@@ -3,9 +3,10 @@
         <span
         @mouseenter="hover = true"
         @mouseleave="hover = false">
-        <h3> {{cuteString()}} {{ name }} </h3>
+        <p> {{cuteString()}} {{ name }} </p>
         <img alt="Goose image" :src="sprite" style="transform: scale(0.5);" />
         </span>
+        <p class="statsandother">
         <span v-if="hover">
         <table>
         <tbody>
@@ -27,6 +28,7 @@
         </tbody>
         </table>
         </span>
+        </p>
     </div>
 </template>
 

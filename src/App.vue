@@ -10,18 +10,19 @@
 
 <style>
 #app {
-  font-size: 40px;
+  font-size: 30px;
   font-family: Monaco;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #3739ab;
+  color: #000000; 
   text-shadow:
     -1px -1px 0 rgb(255, 255, 255),
     1px -1px 0 rgb(255, 255, 255),
     -1px 1px 0 rgb(255, 255, 255),
     1px 1px 0 rgb(255, 255, 255);  
 }
+
 
 
 :root, body {
@@ -38,6 +39,17 @@
     1px -1px 0 rgb(255, 255, 255),
     -1px 1px 0 rgb(255, 255, 255),
     1px 1px 0 rgb(255, 255, 255);  
+}
+
+.statsandother
+{
+  font-size: 20px;
+  color: #2346a8; 
+  text-shadow:
+  -1px -1px 0 #c0f6ff,
+  1px -1px 0 #c0f6ff,
+  -1px 1px 0 #c0f6ff,
+  1px 1px 0 #c0f6ff;
 }
 
 #nav {
