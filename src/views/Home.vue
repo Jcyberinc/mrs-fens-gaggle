@@ -25,11 +25,12 @@ class Goose {
   }
 }
 // breeds geese
-  function breeder(firstGoose: Goose, secondGoose : Goose): Goose {
+  function breeder(firstGoose: Goose, secondGoose : Goose, sprite: string): Goose {
     return new Goose(childGooseHelperName(firstGoose, secondGoose),
     childGooseHelperHonk(firstGoose, secondGoose),
     childGooseHelperWingspan(firstGoose, secondGoose),
-    childGooseHelperNeck(firstGoose, secondGoose))
+    childGooseHelperNeck(firstGoose, secondGoose),
+    sprite)
   }  
 
 // averages the honk stat vaule 
