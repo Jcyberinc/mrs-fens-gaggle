@@ -26,8 +26,12 @@ class Goose {
     this.honk = honk
     this.wingspan = wingspan
     this.neck = neck
-    this.cute = cute
-    this.cool = cool
+    this.cute = (100-honk) + (100-wingspan) + (100-neck) + cute
+    if(neck>75){
+      this.cool = honk + wingspan + cool - 50
+    } else {
+      this.cool = honk + wingspan + neck + cool
+    }
     this.sprite = sprite
   }
 
