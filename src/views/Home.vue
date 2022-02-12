@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Mrs. Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block; margin-bottom: 30px" /> 
     <main style="display: flex; flex-flow: row wrap; justify-content: center; gap: 20px;">
-      <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" />
+      <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" :honk="goose.honk" :wingspan="goose.wingspan" :neck="goose.neck"/>
     </main>
   </div>
 </template>
@@ -12,8 +12,14 @@ import GooseComponent from '@/components/Goose.vue';
 
 class Goose {
   name: string
-  constructor(name: string) {
+  honk: number
+  wingspan: number
+  neck: number
+  constructor(name: string, honk: number, wingspan: number, neck: number) {
     this.name = name
+    this.honk = honk
+    this.wingspan = wingspan
+    this.neck = neck
   }
 }
 
@@ -29,17 +35,7 @@ export default {
   data: function() {
     return {
       geese: [
-        new Goose('Huey'),
-        new Goose('Dewey'),
-        new Goose('Louie'),
-        new Goose('Donald'),
-        new Goose('Goose'),
-        new Goose('Scrooge'),
-        new Goose('Duck'),
-        new Goose('Daffy'),
-        new Goose('Bugs'),
-        new Goose('Porky'),
-        new Goose('Taz'),
+        new Goose('Huey', 50, 30, 10)
       ]
     }
   }
