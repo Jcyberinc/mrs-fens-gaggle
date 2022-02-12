@@ -2,9 +2,9 @@
   <div class="home">
     <img
       alt="Ms. Fens' Gaggle"
-      src="@/assets/logo.png"
+      src="@/assets/logofinal.png"
       style="dis
-      play: inline-block; transform: scale(0.5); margin-bottom: 30px"
+      play: inline-block; margin-bottom: 30px"
     />
 
     <main
@@ -138,7 +138,7 @@ export default Vue.extend({
   },
   methods: {
     spawnGoose() {
-      window.setTimeout(this.spawnGoose, 6_000);
+      window.setTimeout(this.spawnGoose, 60_000);
       let goose = this.randomStatGen();
       window.setTimeout(() => goose.leave(this.geese), 210_000);
       this.geese.push(goose);
