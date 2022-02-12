@@ -10,11 +10,17 @@
 
 <style>
 #app {
-  font-family: "Papyrus";
+  font-size: 40px;
+  font-family: Monaco;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #3739ab;
+  text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255),
+    1px 1px 0 rgb(255, 255, 255);  
 }
 
 
@@ -22,9 +28,11 @@
   background-image: url(~@/assets/BACKGROUND.png);
 }
 
+    @font-face { font-family: Monaco;
+    src: url('~@/assets/monaco.ttf');}
+
 .strokeme
 {
-    color: rgb(0, 0, 0);
     text-shadow:
     -1px -1px 0 rgb(255, 255, 255),
     1px -1px 0 rgb(255, 255, 255),
