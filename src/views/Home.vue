@@ -35,24 +35,39 @@ class Goose {
   }  
 
 // averages the honk stat vaule 
-  function childGooseHelperHonk(firstGoose: Goose , secondGoose: Goose): number {
-    return Math.round((firstGoose.honk + firstGoose.honk)/ 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
-  }
+function childGooseHelperHonk(firstGoose: Goose , secondGoose: Goose): number {
+  return Math.round((firstGoose.honk + firstGoose.honk)/ 2) + (Math.floor(Math.random() * (11 - -10)) + -10)
+}
 
 // averages the wingspan stat value
-  function childGooseHelperWingspan(firstGoose: Goose, secondGoose: Goose): number {
-    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
-  }
+function childGooseHelperWingspan(firstGoose: Goose, secondGoose: Goose): number {
+  return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) + (Math.floor(Math.random() * (11 - -10)) + -10)
+}
 
 // averages the neck stat value
-  function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
-    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2)  + (Math.floor(Math.random() * (10 - -10 )) + -10)
-  }
+function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
+  return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2)  + (Math.floor(Math.random() * (11 - -10)) + -10)
+}
 
  // STUB FIX NAME RANDOMIZER 
-  function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
-    return firstGoose.name
-  } 
+function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
+  return firstGoose.name
+} 
+
+// random stat generator for the spawning geese
+function randomStatGen(): Goose {
+  return new Goose("StubNameGen", randomNum(), randomNum(), randomNum(), "no hat" )
+}
+
+// creates the random number 
+function randomNum(): number {
+  return Math.random() * 101 
+}
+
+// name generator
+
+
+
 
 
 class HatType {
