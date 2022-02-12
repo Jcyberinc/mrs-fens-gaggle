@@ -95,7 +95,7 @@ function childGooseHelperWingspan(
 // averages the neck stat value
 function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
   return (
-    Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) +
+    Math.round((firstGoose.neck + secondGoose.neck) / 2) +
     (Math.floor(Math.random() * (11 - -10)) + -10)
   );
 }
