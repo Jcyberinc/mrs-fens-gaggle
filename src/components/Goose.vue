@@ -7,7 +7,12 @@
 
 <script lang="ts">
 export default {
-    name: 'Goose',
-    props: ['name']
+props: {
+    name: String,
+    honk: Number,
+    wingspan: Number,
+    neck: Number,
+    foot: Number,
+  }
 }
 </script>
