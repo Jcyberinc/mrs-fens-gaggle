@@ -52,7 +52,16 @@ class Goose {
 
 
 class HatType {
-
+  name: string
+  image: string
+  cute: number
+  cool: number
+  constructor(name: string, image: string, cute: number, cool: number) {
+    this.name = name
+    this.image = image
+    this.cute = cute
+    this.cool = cool
+  }
 }
 
 export default {
