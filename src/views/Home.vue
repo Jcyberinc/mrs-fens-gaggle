@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
+    <p> Sussy Amongus </p>
     <HelloWorld msg="Mrs. Fens' Gaggle"/>
   </div>
 </template>
