@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <img alt="Mrs.Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block;" /> 
-    <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" style="padding:10px" />
+    <img alt="Mrs.Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block; margin-bottom: 30px" /> 
+    <main style="display: flex; flex-flow: row wrap; justify-content: center; gap: 40px;">
+      <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" />
+    </main>
   </div>
 </template>
 
@@ -25,7 +27,15 @@ export default {
       geese: [
         new Goose('Huey'),
         new Goose('Dewey'),
-        new Goose('Louie')
+        new Goose('Louie'),
+        new Goose('Donald'),
+        new Goose('Goose'),
+        new Goose('Scrooge'),
+        new Goose('Duck'),
+        new Goose('Daffy'),
+        new Goose('Bugs'),
+        new Goose('Porky'),
+        new Goose('Taz'),
       ]
     }
   }
