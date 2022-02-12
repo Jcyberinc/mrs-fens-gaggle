@@ -1,6 +1,11 @@
 <template>
     <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
+        <span
+        @mouseover="hover = true"
+        @mouseleave="hover = false">
         <img alt="Goose image" :src="sprite" style="transform: scale(0.5);" /> 
+        </span>
+        <span v-if="hover">
         <h3> {{ name }} </h3>
         <table>
         <tbody>
@@ -21,11 +26,18 @@
         </tr>
         </tbody>
         </table>
-    </div>    
+        </span>
+    </div>
 </template>
 
 <script lang="ts">
+
 export default {
+      data() {
+    return {
+      hover: false,
+    };
+  },
 props: {
     name: String,
     honk: Number,
@@ -36,4 +48,5 @@ props: {
     sprite: String
   }
 }
+
 </script>
