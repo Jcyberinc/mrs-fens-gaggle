@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import GooseComponent from '@/components/Goose.vue';
+import { array as ManyNames } from '@/assets/names.json'; 
 
 class Goose {
   name: string
@@ -25,6 +26,7 @@ class Goose {
     this.sprite = sprite
   }
 }
+
 // breeds geese
   function breeder(firstGoose: Goose, secondGoose : Goose, sprite: string): Goose {
     return new Goose(childGooseHelperName(firstGoose, secondGoose),
@@ -55,8 +57,8 @@ function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
 } 
 
 // random stat generator for the spawning geese
-function randomStatGen(): Goose {
-  return new Goose("StubNameGen", randomNum(), randomNum(), randomNum(), "no hat" )
+function randomStatgen(): Goose {
+  return new Goose(randomName(), randomNum(), randomNum(), randomNum(), "no hat" )
 }
 
 // creates the random number 
@@ -65,6 +67,10 @@ function randomNum(): number {
 }
 
 // name generator
+function randomName(): string {
+
+  return ManyNames[Math.floor(Math.random() * ManyNames.length)]
+}
 
 
 
