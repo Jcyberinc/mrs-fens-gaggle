@@ -90,7 +90,7 @@ export default {
     cute: Number,
     cool: Number,
     sprite: String,
-    fertility: Number
+    fertile: Boolean
   },
 };
 </script>
