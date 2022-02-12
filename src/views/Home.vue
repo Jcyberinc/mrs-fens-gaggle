@@ -3,8 +3,7 @@
     <img
       alt="Ms. Fens' Gaggle"
       src="@/assets/logofinal.png"
-      style="dis
-      play: inline-block; margin-bottom: 30px"
+      style="display: inline-block; margin-bottom: 60px"
     />
 
     <main
