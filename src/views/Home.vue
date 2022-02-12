@@ -3,8 +3,10 @@
     <img
       alt="Ms. Fens' Gaggle"
       src="@/assets/logo.png"
-      style="display: inline-block; transform: scale(0.5); margin-bottom: 30px"
+      style="dis
+      play: inline-block; transform: scale(0.5); margin-bottom: 30px"
     />
+    <BreedingComponent :geese="geese" />
     <main
       style="
         display: flex;
@@ -30,6 +32,7 @@
 
 <script lang="ts">
 import GooseComponent from "@/components/Goose.vue";
+import BreedingComponent from "@/components/Breeding.vue";
 import { array as ManyNames } from "@/assets/names.json";
 import Vue from "vue";
 
@@ -140,6 +143,7 @@ export default Vue.extend({
   name: "Home",
   components: {
     GooseComponent,
+    BreedingComponent
   },
   methods: {
     spawnGoose() {
