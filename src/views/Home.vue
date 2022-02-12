@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Mrs. Fens' Gaggle</h1>
+    <img alt="Mrs.Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block;" /> 
     <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" style="padding:10px" />
   </div>
 </template>
