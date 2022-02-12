@@ -22,6 +22,16 @@
   background-image: url(~@/assets/BACKGROUND.png);
 }
 
+.strokeme
+{
+    color: rgb(0, 0, 0);
+    text-shadow:
+    -1px -1px 0 rgb(255, 255, 255),
+    1px -1px 0 rgb(255, 255, 255),
+    -1px 1px 0 rgb(255, 255, 255),
+    1px 1px 0 rgb(255, 255, 255);  
+}
+
 #nav {
   padding: 30px;
 }
