@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>sussy among us balls</h1>
-    <p> hewwo new world!! </p>
+    <h1>What is this game?!?!?!</h1>
+    <p> Idk lol </p>
   </div>
 </template>
