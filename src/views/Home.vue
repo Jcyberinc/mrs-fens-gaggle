@@ -26,11 +26,11 @@ class Goose {
     this.honk = honk
     this.wingspan = wingspan
     this.neck = neck
-    this.cute = (100-honk) + (100-wingspan) + (100-neck) + cute
+    this.cute = (100-honk) + (100-wingspan) + (100-neck) + (cute * 10)
     if(neck>75){
-      this.cool = honk + wingspan + cool - 100
+      this.cool = honk + wingspan + (cool * 10) - 100
     } else {
-      this.cool = honk + wingspan + neck + cool
+      this.cool = honk + wingspan + neck + (cool * 10)
     }
     this.sprite = sprite
   }
@@ -116,7 +116,7 @@ export default Vue.extend({
     // random stat generator for the spawning geese
     randomStatGen(): Goose {
       let hat = this.randomHat();
-      return new Goose(randomName(), randomNum(), randomNum(), randomNum(), hat.cute * 10, hat.cool * 10, hat.image)
+      return new Goose(randomName(), randomNum(), randomNum(), randomNum(), hat.cute, hat.cool, hat.image)
     },
     randomHat(): HatType {
       if (Math.random() < 0.001) return this.banana;
