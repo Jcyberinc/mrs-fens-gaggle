@@ -59,7 +59,9 @@
 </template>
 
 <script lang="ts">
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   data() {
     return {
       hover: false,
@@ -91,5 +93,5 @@ export default {
     cool: Number,
     sprite: String,
   },
-};
+});
 </script>
