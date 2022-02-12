@@ -2,7 +2,8 @@
   <div class="home">
     <img alt="Mrs. Fens' Gaggle" src="../assets/logo.gif" style="height: 100%; display: inline-block; margin-bottom: 30px" /> 
     <main style="display: flex; flex-flow: row wrap; justify-content: center; gap: 20px;">
-      <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" />
+      <GooseComponent v-for="goose in geese" :key="goose.name" :name="goose.name" :honk="goose.honk"
+      :wingspan="goose.wingspan" :neck="goose.neck" :sprite="goose.sprite"/>
     </main>
   </div>
 </template>
@@ -12,17 +13,63 @@ import GooseComponent from '@/components/Goose.vue';
 
 class Goose {
   name: string
-  constructor(name: string) {
+  honk: number
+  wingspan: number
+  neck: number
+  sprite: string
+  constructor(name: string, honk: number, wingspan: number, neck: number, sprite: string) {
     this.name = name
+    this.honk = honk
+    this.wingspan = wingspan
+    this.neck = neck
+    this.sprite = sprite
   }
 
   leave(geese: Goose[]) {
     geese.splice(geese.indexOf(this), 1);
   }
 }
+// breeds geese
+  function breeder(firstGoose: Goose, secondGoose : Goose, sprite: string): Goose {
+    return new Goose(childGooseHelperName(firstGoose, secondGoose),
+    childGooseHelperHonk(firstGoose, secondGoose),
+    childGooseHelperWingspan(firstGoose, secondGoose),
+    childGooseHelperNeck(firstGoose, secondGoose),
+    sprite)
+  }  
+
+// averages the honk stat vaule 
+  function childGooseHelperHonk(firstGoose: Goose , secondGoose: Goose): number {
+    return Math.round((firstGoose.honk + firstGoose.honk)/ 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
+  }
+
+// averages the wingspan stat value
+  function childGooseHelperWingspan(firstGoose: Goose, secondGoose: Goose): number {
+    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) + (Math.floor(Math.random() * (10 - -10 )) + -10)
+  }
+
+// averages the neck stat value
+  function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
+    return Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2)  + (Math.floor(Math.random() * (10 - -10 )) + -10)
+  }
+
+ // STUB FIX NAME RANDOMIZER 
+  function childGooseHelperName(firstGoose: Goose, secondGoose: Goose): string {
+    return firstGoose.name
+  } 
+
 
 class HatType {
-
+  name: string
+  image: string
+  cute: number
+  cool: number
+  constructor(name: string, image: string, cute: number, cool: number) {
+    this.name = name
+    this.image = image
+    this.cute = cute
+    this.cool = cool
+  }
 }
 
 export default {
@@ -33,17 +80,8 @@ export default {
   data: function() {
     return {
       geese: [
-        new Goose('Huey'),
-        new Goose('Dewey'),
-        new Goose('Louie'),
-        new Goose('Donald'),
-        new Goose('Goose'),
-        new Goose('Scrooge'),
-        new Goose('Duck'),
-        new Goose('Daffy'),
-        new Goose('Bugs'),
-        new Goose('Porky'),
-        new Goose('Taz'),
+        /* eslint-disable */
+        new Goose('Huey', 50, 30, 10, require("@/assets/goosefinal.png"))
       ]
     }
   },

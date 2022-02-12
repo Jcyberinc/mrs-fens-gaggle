@@ -1,8 +1,27 @@
 <template>
     <div style="height: 100px; display: flex; justify-content: center; align-items: center;">
-        <img alt="Goose image" src="../assets/goose.png" style="transform: scale(0.5);" /> 
+        <img alt="Goose image" :src="sprite" style="transform: scale(0.5);" /> 
         <h3> {{ name }} </h3>
-    </div>
+        <table>
+        <tbody>
+        <tr>
+        <td>&nbsp;Honk
+            <b-progress :value="honk" :max=100 show-progress animated></b-progress>
+        </td>
+        </tr>
+        <tr>
+        <td>&nbsp;Wingspan
+            <b-progress :value="wingspan" :max=100 show-progress animated></b-progress>
+        </td>
+        </tr>
+        <tr>
+        <td>&nbsp;Neck Size
+            <b-progress :value="neck" :max=100 show-progress animated></b-progress>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+    </div>    
 </template>
 
 <script lang="ts">
@@ -11,7 +30,10 @@ props: {
     name: String,
     honk: Number,
     wingspan: Number,
-    neck: Number
+    neck: Number,
+    cool: Number,
+    cute: Number,
+    sprite: String
   }
 }
 </script>
