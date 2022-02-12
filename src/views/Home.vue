@@ -15,11 +15,13 @@ class Goose {
   honk: number
   wingspan: number
   neck: number
-  constructor(name: string, honk: number, wingspan: number, neck: number) {
+  sprite: string
+  constructor(name: string, honk: number, wingspan: number, neck: number, sprite: string) {
     this.name = name
     this.honk = honk
     this.wingspan = wingspan
     this.neck = neck
+    this.sprite = sprite
   }
 }
 // breeds geese
@@ -72,7 +74,7 @@ export default {
   data: function() {
     return {
       geese: [
-        new Goose('Huey', 50, 30, 10)
+        new Goose('Huey', 50, 30, 10, "../assets/goosefinal.png")
       ]
     }
   }
