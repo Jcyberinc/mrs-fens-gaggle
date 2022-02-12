@@ -28,7 +28,7 @@ class Goose {
     this.neck = neck
     this.cute = (100-honk) + (100-wingspan) + (100-neck) + cute
     if(neck>75){
-      this.cool = honk + wingspan + cool - 50
+      this.cool = honk + wingspan + cool - 100
     } else {
       this.cool = honk + wingspan + neck + cool
     }
