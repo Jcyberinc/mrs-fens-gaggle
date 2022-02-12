@@ -25,7 +25,10 @@ props: {
     name: String,
     honk: Number,
     wingspan: Number,
-    neck: Number
+    neck: Number,
+    cool: Number,
+    cute: Number,
+    sprite: String
   }
 }
 </script>
