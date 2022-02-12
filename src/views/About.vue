@@ -3,20 +3,20 @@
     <h1 class = "strokeme"> Mrs. Fens' Gaggle Production Staff</h1>
     <div class = "statsandother">
     <h3>
-    <p>Project Lead:</p>
-    <h2 class="strokeme">Derek Kaplan</h2>
-    <p>Lead Artist:</p>
-    <h2 class="strokeme">Ula Bitinaitis</h2>
-    <p>Lead Composer:</p>
-    <h2 class="strokeme">Deanna Turner</h2>
-    <p>Lead Script Writer:</p>
-    <h2 class="strokeme">Emily Xu</h2>
-    <p>Code Monkeys:</p>
-    <h2 class="strokeme">Luis Toral and Julian Varga</h2>
-    <p>Non-Lead Composer:</p>
-    <h2 class="strokeme">Julian Varga</h2>
-    <p>Moral Support and Snacks:</p>
-    <h2 class="strokeme">Caitlin Shen</h2>
+    <h2 class="strokeme">Project Lead:</h2>
+    <p>Derek Kaplan</p>
+    <h2 class="strokeme">Lead Artist:</h2>
+    <p>Ula Bitinaitis</p>
+    <h2 class="strokeme">Lead Composer:</h2>
+    <p>Deanna Turner</p>
+    <h2 class="strokeme">Lead Script Writer:</h2>
+    <p>Emily Xu</p>
+    <h2 class="strokeme">Code Monkeys:</h2>
+    <p>Luis Toral and Julian Varga</p>
+    <h2 class="strokeme">Non-Lead Composer:</h2>
+    <p>Julian Varga</p>
+    <h2 class="strokeme">Moral Support and Snacks:</h2>
+    <p>Caitlin Shen</p>
     </h3>
     </div>
   </div>
