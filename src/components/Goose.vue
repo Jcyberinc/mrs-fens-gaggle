@@ -89,10 +89,7 @@ export default Vue.extend({
     cute: Number,
     cool: Number,
     sprite: String,
-    fertile: {
-      type: Boolean,
-      default: true,
-    }
-  },
-});
+    fertile: Boolean
+  }
+})
 </script>
