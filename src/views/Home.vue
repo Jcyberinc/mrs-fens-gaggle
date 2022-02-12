@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img
-      alt="Mrs. Fens' Gaggle"
+      alt="Ms. Fens' Gaggle"
       src="@/assets/logo.png"
       style="display: inline-block; transform: scale(0.5); margin-bottom: 30px"
     />
