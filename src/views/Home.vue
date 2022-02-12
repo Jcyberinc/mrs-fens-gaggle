@@ -22,7 +22,7 @@ class Goose {
     this.neck = neck
   }
 }
-
+// breeds geese
   function breeder(firstGoose: Goose, secondGoose : Goose) {
     return new Goose(childGooseHelperName(firstGoose, secondGoose),
     childGooseHelperHonk(firstGoose, secondGoose),
