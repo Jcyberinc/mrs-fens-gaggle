@@ -71,19 +71,6 @@ class Goose {
   }
 }
 
-// breeds geese
-function breeder(firstGoose: Goose, secondGoose: Goose, sprite: string): Goose {
-  return new Goose(
-    childGooseHelperName(firstGoose, secondGoose),
-    childGooseHelperHonk(firstGoose, secondGoose),
-    childGooseHelperWingspan(firstGoose, secondGoose),
-    childGooseHelperNeck(firstGoose, secondGoose),
-    randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-    randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-    sprite
-  );
-}
-
 // averages the honk stat vaule
 function childGooseHelperHonk(firstGoose: Goose, secondGoose: Goose): number {
   return (
@@ -171,6 +158,17 @@ export default Vue.extend({
         return this.hats[Math.floor(Math.random() * this.hats.length)];
       else return this.hats[0];
     },
+    breeder(firstGoose: Goose, secondGoose: Goose, sprite: string) {
+    this.geese.push(new Goose(
+    childGooseHelperName(firstGoose, secondGoose),
+    childGooseHelperHonk(firstGoose, secondGoose),
+    childGooseHelperWingspan(firstGoose, secondGoose),
+    childGooseHelperNeck(firstGoose, secondGoose),
+    randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+    randomNum(), //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+    sprite
+  ));
+}
   },
   data: function () {
     return {
