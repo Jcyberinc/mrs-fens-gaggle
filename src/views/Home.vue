@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Mrs. Fens' Geese</h1>
+    <h1>Mrs. Fens' Gaggle</h1>
     <Goose name="Huey" />
   </div>
 </template>
