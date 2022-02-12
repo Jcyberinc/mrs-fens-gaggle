@@ -23,7 +23,7 @@ class Goose {
   }
 }
 
-  function childGoose(firstGoose: Goose, secondGoose : Goose) {
+  function breeder(firstGoose: Goose, secondGoose : Goose) {
     return new Goose(childGooseHelperName(firstGoose, secondGoose),
     childGooseHelperHonk(firstGoose, secondGoose),
     childGooseHelperWingspan(firstGoose, secondGoose),
