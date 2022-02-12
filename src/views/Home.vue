@@ -75,21 +75,8 @@ class Goose {
     geese.splice(geese.indexOf(this), 1);
   }
 
-  changeFert(geese: Goose[], fert: boolean) {
-    geese.splice(geese.indexOf(this), 1);
-    geese.push(
-      new Goose(
-        this.name,
-        this.honk,
-        this.wingspan,
-        this.neck,
-        this.cute,
-        this.cool,
-        this.sprite,
-        this.hatID,
-        fert
-      )
-    );
+  changeFert(fert: boolean) {
+    this.fertility = fert;
   }
 }
 
@@ -224,13 +211,8 @@ export default Vue.extend({
         if (goose != this.breedQueue[0]) {
           if (goose.fertility == true && this.breedQueue[0].fertility == true) {
             this.breeder(goose, this.breedQueue[0], this.hats[0].image);
-            goose.changeFert(this.geese, false);
-            this.breedQueue[0].changeFert(this.geese, false);
-            window.setTimeout(() => goose.changeFert(this.geese, true), 60_000);
-            window.setTimeout(
-              () => this.breedQueue[0].changeFert(this.geese, true),
-              60_000
-            );
+            goose.changeFert(false);
+            window.setTimeout(() => goose.changeFert(true), 60_000);
             this.breedQueue.splice(0);
           } else {
             this.breedQueue.splice(0);
