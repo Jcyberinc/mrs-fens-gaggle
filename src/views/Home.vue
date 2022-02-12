@@ -181,11 +181,11 @@ export default Vue.extend({
         new HatType("Bonnet", require("@/assets/babygoose.png"), 9, -4),
         new HatType("Santa", require("@/assets/santagoose.png"), 6, -1),
         new HatType("Chefs Hat", require("@/assets/chefgoose.png"), 1, 4),
-        new HatType("Frog Hat", require("@/assets/chefgoose.png"), 10, -5),
+        new HatType("Frog Hat", require("@/assets/goosefroggy.png"), 10, -5),
       ],
       banana: new HatType(
         "Rotten Banana",
-        require("@/assets/banangoose.png"),
+        require("@/assets/bannanahosk.png"),
         -10,
         -10
       ),
