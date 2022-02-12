@@ -17,6 +17,10 @@ class Goose {
   }
 }
 
+class HatType {
+
+}
+
 export default {
   name: 'Home',
   components: {
