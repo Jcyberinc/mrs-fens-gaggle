@@ -104,7 +104,7 @@ export default {
         new HatType('Santa', "/@/assets/santagoose.png", 6, -1),
         new HatType('Chefs Hat', "/@/assets/chefgoose.png", 1, 4),
         new HatType('Frog Hat', "/@/assets/chefgoose.png", 10, -5),
-        new HatType('Rotten Banana', "/@/assets/chefgoose.png", -10, -10)
+        new HatType('Rotten Banana', "/@/assets/bananagoose.png", -10, -10)
       ]
     }
   }
