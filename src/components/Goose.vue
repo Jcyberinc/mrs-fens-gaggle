@@ -10,7 +10,7 @@
       <h3>{{ status() }} {{ name }}</h3>
       <img alt="Goose image" :src="sprite" height="150px"/>
     </span>
-    <div class="statsandother" :style="{backgroundColor: style()}"  v-if="hover">
+    <div class="statsandother" v-if="hover">
         <table>
           <tbody>
             <tr>
@@ -49,6 +49,16 @@
                 ></b-progress>
               </td>
             </tr>
+            <tr v-if="isNotFertile">
+              <td>
+                &nbsp;Can't Breed
+                <b-progress
+                  :value="100"
+                  :max="100"
+                  variant="danger"
+                ></b-progress>
+              </td>
+            </tr>
           </tbody>
         </table>
     </div>
@@ -63,6 +73,11 @@ export default Vue.extend({
     return {
       hover: false
     };
+  },
+  computed: {
+    isNotFertile(): boolean {
+        return !this.fertile;
+    }
   },
   methods: {
     status() {
@@ -80,13 +95,6 @@ export default Vue.extend({
         return "";
       }
     },
-    style() {
-        if (this.selected == true) {
-            return "#940000";
-        } else {
-            return "#808080";
-        }
-    }
   },
   props: {
     name: String,
