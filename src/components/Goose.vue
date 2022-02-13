@@ -56,8 +56,6 @@
                   :value="100"
                   :max="100"
                   variant="danger"
-                  striped
-                  animated
                 ></b-progress>
               </td>
             </tr>
