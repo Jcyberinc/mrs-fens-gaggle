@@ -126,7 +126,10 @@
       src="@/assets/rate.png"
       height="100px"
       width="100px"
-      @click="rating = !rating"
+      @click="
+        rating = !rating;
+        maxGoose = maxGooser();
+      "
       style="position: absolute; top: 20px; left: 20px"
     />
   </div>
@@ -340,9 +343,20 @@ export default Vue.extend({
         }
       }
     },
+    maxGooser(): number {
+      if (this.breedQueue.length == 0) {
+        return 0;
+      } else {
+        let gander = this.breedQueue[0];
+        gander.select();
+        this.breedQueue.splice(0);
+        return Math.max(gander.cute, gander.cool) / 4;
+      }
+    },
   },
   data: function () {
     return {
+      maxGoose: Number,
       rating: false,
       geese: Array<Goose>(),
       breedQueue: Array<Goose>(),
@@ -378,17 +392,6 @@ export default Vue.extend({
         -10
       ),
     };
-  },
-  computed: {
-    maxGoose(): number {
-      if (this.breedQueue.length == 0) {
-        return 0;
-      } else {
-        let gander = this.breedQueue[0];
-        gander.select();
-        return Math.max(gander.cute, gander.cool) / 4;
-      }
-    },
   },
   mounted() {
     window.setTimeout(this.spawnGoose, 3_000);
