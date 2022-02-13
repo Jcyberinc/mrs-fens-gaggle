@@ -49,7 +49,7 @@
                 ></b-progress>
               </td>
             </tr>
-            <tr v-if="isNotFertile">
+            <tr v-if="!fertile">
               <td>
                 &nbsp;Can't Breed
                 <b-progress
@@ -73,11 +73,6 @@ export default Vue.extend({
     return {
       hover: false
     };
-  },
-  computed: {
-    isNotFertile(): boolean {
-        return !this.fertile;
-    }
   },
   methods: {
     status() {
