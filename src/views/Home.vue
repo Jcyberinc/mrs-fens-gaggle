@@ -237,8 +237,8 @@ export default Vue.extend({
           childGooseHelperHonk(firstGoose, secondGoose),
           childGooseHelperWingspan(firstGoose, secondGoose),
           childGooseHelperNeck(firstGoose, secondGoose),
-          hat.cute, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
-          hat.cool, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
+          hat.cute,
+          hat.cool,
           hat.image,
           hat.id,
           true,
