@@ -28,11 +28,6 @@
         @click.native="addToBreedQueue(goose)"
       />
     </main>
-    <div>  
-      <audio controls>
-      <a href="https://soundcloud.com/user-238669090/ms-fens-gaggle-ost"/>
-      </audio>
-  </div>
     <div v-if="rating" style="position:fixed;left:0;right:0;top:0;bottom:0;background-color:rgb(0,0,0,0.4);display:flex;">
       <img src="@/assets/MRSFENS.png" style="position:absolute;left:0px;bottom:0;width:400px;height:400px"/>
       <div style="margin: auto; width: 500px; padding: 20px;border-radius: 20px; background-color:rgb(255,255,255);z-index:1000;">
