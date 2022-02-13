@@ -22,6 +22,8 @@
         :neck="goose.neck"
         :cute="goose.cute"
         :cool="goose.cool"
+        :fertile = "goose.fertility"
+        :selected = "goose.selected"
         :sprite="goose.sprite"
         @click.native="addToBreedQueue(goose)"
       />
@@ -230,8 +232,7 @@ export default Vue.extend({
     },
     breeder(firstGoose: Goose, secondGoose: Goose, sprite: string) {
       let hat = this.childGooseHelperHat(firstGoose, secondGoose);
-      this.geese.push(
-        new Goose(
+      let goose = new Goose(
           randomName(),
           childGooseHelperHonk(firstGoose, secondGoose),
           childGooseHelperWingspan(firstGoose, secondGoose),
@@ -243,7 +244,8 @@ export default Vue.extend({
           true,
           false
         )
-      );
+      window.setTimeout(() => goose.leave(this.geese), 210_000);
+      this.geese.push(goose);
     },
     addToBreedQueue(goose: Goose) {
       if (this.breedQueue.length == 0) {
