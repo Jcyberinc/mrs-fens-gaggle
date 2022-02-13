@@ -22,8 +22,8 @@
         :neck="goose.neck"
         :cute="goose.cute"
         :cool="goose.cool"
-        :fertile = "goose.fertility"
-        :selected = "goose.selected"
+        :fertile="goose.fertility"
+        :selected="goose.selected"
         :sprite="goose.sprite"
         @click.native="addToBreedQueue(goose)"
       />
