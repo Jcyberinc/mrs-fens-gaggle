@@ -45,6 +45,7 @@ class Goose {
   sprite: string;
   hatID: number;
   fertility: boolean;
+  selected: boolean;
   constructor(
     name: string,
     honk: number,
@@ -54,7 +55,8 @@ class Goose {
     cool: number,
     sprite: string,
     hatID: number,
-    fertility: boolean
+    fertility: boolean,
+    selected: boolean
   ) {
     this.name = name;
     this.honk = honk;
@@ -69,6 +71,7 @@ class Goose {
     this.sprite = sprite;
     this.hatID = hatID;
     this.fertility = fertility;
+    this.selected = selected;
   }
 
   leave(geese: Goose[]) {
@@ -77,6 +80,10 @@ class Goose {
 
   changeFert(fert: boolean) {
     this.fertility = fert;
+  }
+
+  select() {
+    this.selected = !this.selected;
   }
 }
 
@@ -167,7 +174,8 @@ export default Vue.extend({
         hat.cool,
         hat.image,
         hat.id,
-        true
+        true,
+        false
       );
     },
     randomHat(): HatType {
@@ -200,24 +208,31 @@ export default Vue.extend({
           hat.cool, //PLACEHOLDER CODE UNTIL ACTUAL HELPERS MADE
           hat.image,
           hat.id,
-          true
+          true,
+          false
         )
       );
     },
     addToBreedQueue(goose: Goose) {
       if (this.breedQueue.length == 0) {
+        goose.select();
         this.breedQueue.push(goose);
       } else if (this.breedQueue.length == 1) {
-        if (goose != this.breedQueue[0]) {
-          if (goose.fertility == true && this.breedQueue[0].fertility == true) {
-            this.breeder(goose, this.breedQueue[0], this.hats[0].image);
+        let gander = this.breedQueue[0];
+        if (goose != gander) {
+          if (goose.fertility == true && gander.fertility == true) {
+            this.breeder(goose, gander, this.hats[0].image);
             goose.changeFert(false);
+            gander.changeFert(false);
             window.setTimeout(() => goose.changeFert(true), 60_000);
+            window.setTimeout(() => gander.changeFert(true), 60_000);
             this.breedQueue.splice(0);
           } else {
             this.breedQueue.splice(0);
           }
+          gander.select();
         }
+        goose.select();
       }
     },
   },
@@ -269,7 +284,8 @@ export default Vue.extend({
       0,
       require("@/assets/goosefinal.png"),
       0,
-      true
+      true,
+      false
     );
     window.setTimeout(() => huey.leave(this.geese), 18_000);
     this.geese.push(huey);

@@ -10,7 +10,7 @@
       <h3>{{ status() }} {{ name }}</h3>
       <img alt="Goose image" :src="sprite" height="150px"/>
     </span>
-    <div class="statsandother"  v-if="hover">
+    <div class="statsandother" :style="{backgroundColor: style()}"  v-if="hover">
         <table>
           <tbody>
             <tr>
@@ -61,7 +61,7 @@ import Vue from "vue";
 export default Vue.extend({
   data() {
     return {
-      hover: false,
+      hover: false
     };
   },
   methods: {
@@ -80,6 +80,13 @@ export default Vue.extend({
         return "";
       }
     },
+    style() {
+        if (this.selected == true) {
+            return "#940000";
+        } else {
+            return "#808080";
+        }
+    }
   },
   props: {
     name: String,
@@ -89,7 +96,8 @@ export default Vue.extend({
     cute: Number,
     cool: Number,
     sprite: String,
-    fertile: Boolean
+    fertile: Boolean,
+    selected: Boolean
   }
 })
 </script>
