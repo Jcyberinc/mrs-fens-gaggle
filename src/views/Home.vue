@@ -123,7 +123,7 @@ class Goose {
 function childGooseHelperHonk(firstGoose: Goose, secondGoose: Goose): number {
   return (
     Math.round((firstGoose.honk + firstGoose.honk) / 2) +
-    (Math.floor(Math.random() * (11 - -10)) + -10)
+    (Math.floor(Math.random() * (16 - -15)) + -15)
   );
 }
 
@@ -134,7 +134,7 @@ function childGooseHelperWingspan(
 ): number {
   return (
     Math.round((firstGoose.wingspan + secondGoose.wingspan) / 2) +
-    (Math.floor(Math.random() * (11 - -10)) + -10)
+    (Math.floor(Math.random() * (16 - -15)) + -15)
   );
 }
 
@@ -142,7 +142,7 @@ function childGooseHelperWingspan(
 function childGooseHelperNeck(firstGoose: Goose, secondGoose: Goose): number {
   return (
     Math.round((firstGoose.neck + secondGoose.neck) / 2) +
-    (Math.floor(Math.random() * (11 - -10)) + -10)
+    (Math.floor(Math.random() * (16 - -15)) + -15)
   );
 }
 
