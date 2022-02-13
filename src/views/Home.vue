@@ -1,11 +1,10 @@
 <template>
   <div class="home">
     <img
-      alt="Ms. Fens' Gaggle"
+      alt="Ms. Fen's Gaggle"
       src="@/assets/logofinal.png"
       style="display: inline-block; margin-bottom: 60px"
     />
-
     <main
       style="
         display: flex;
@@ -27,6 +26,13 @@
         @click.native="addToBreedQueue(goose)"
       />
     </main>
+    <div v-if="rating" style="position:fixed;left:0;right:0;top:0;bottom:0;background-color:rgb(0,0,0,0.4);display:flex;">
+      <img src="@/assets/MRSFENS.png" style="position:absolute;left:0px;bottom:0;width:400px;height:400px"/>
+      <div style="margin: auto; width: 500px; padding: 20px;border-radius: 20px; background-color:rgb(255,255,255);z-index:1000;">
+        Placeholder
+      </div>
+    </div>
+    <img src="@/assets/rate.png" height="100px" width="100px" @click="rating=!rating" style="position:absolute; top: 20px; left: 20px;" />
   </div>
 </template>
 
@@ -220,9 +226,13 @@ export default Vue.extend({
         }
       }
     },
+    maxGoose(): number {
+      return this.geese.reduce((acc, goose) => Math.max(acc, goose.cute, goose.cool), 0);
+    }
   },
   data: function () {
     return {
+      rating: false,
       geese: Array<Goose>(),
       breedQueue: Array<Goose>(),
       hats: [
