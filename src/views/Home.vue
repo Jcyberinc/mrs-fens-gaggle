@@ -407,7 +407,7 @@ export default Vue.extend({
       true,
       false
     );
-    window.setTimeout(() => huey.leave(this.geese), 18_000);
+    window.setTimeout(() => huey.leave(this.geese), 210_000);
     this.geese.push(huey);
   },
 });
