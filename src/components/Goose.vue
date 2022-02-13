@@ -10,7 +10,7 @@
       <h3>{{ status() }} {{ name }}</h3>
       <img alt="Goose image" :src="sprite" height="150px"/>
     </span>
-    <div class="statsandother" v-if="hover">
+    <div :class="this.selected ? 'statsandotherselected' : 'statsandother'" v-if="hover">
         <table>
           <tbody>
             <tr>

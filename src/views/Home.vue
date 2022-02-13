@@ -28,39 +28,109 @@
         @click.native="addToBreedQueue(goose)"
       />
     </main>
-    <div v-if="rating" style="position:fixed;left:0;right:0;top:0;bottom:0;background-color:rgb(0,0,0,0.4);display:flex;">
-      <img src="@/assets/MRSFENS.png" style="position:absolute;left:0px;bottom:0;width:400px;height:400px"/>
-      <div style="margin: auto; width: 500px; padding: 20px;border-radius: 20px; background-color:rgb(255,255,255);z-index:1000;">
+    <div
+      v-if="rating"
+      style="
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: rgb(0, 0, 0, 0.4);
+        display: flex;
+      "
+    >
+      <img
+        src="@/assets/MRSFENS.png"
+        style="
+          position: absolute;
+          left: 0px;
+          bottom: 0;
+          width: 400px;
+          height: 400px;
+        "
+      />
+      <div
+        style="
+          margin: auto;
+          width: 500px;
+          padding: 20px;
+          border-radius: 20px;
+          background-color: rgb(255, 255, 255);
+          z-index: 1000;
+        "
+      >
         <p v-if="maxGoose <= 0">
           Ya sure this ain’t a fucking duck little bumpkin?
         </p>
         <p v-if="maxGoose > 0 && maxGoose <= 20">
-          Ya sure that’s a goose you brought me there? Cause they look more like an odd mutant duck than a goose! Try again little bumpkin. I’m sure you can do much better than that. Told ya this is tough work. If ya can’t handle it you should go breed ducks. It seems you’re a natural at it!
+          Ya sure that’s a goose you brought me there? Cause they look more like
+          an odd mutant duck than a goose! Try again little bumpkin. I’m sure
+          you can do much better than that. Told ya this is tough work. If ya
+          can’t handle it you should go breed ducks. It seems you’re a natural
+          at it!
         </p>
         <p v-if="maxGoose > 20 && maxGoose <= 40">
-          Hm… still debatable whether this little fella here is a goose, but after all the geese you’ve shown me before it could be worse. Ay don’t gimme that look! You’re improvin’ little bumpkin, slowly but surely. Just keep workin’ on yer skills and I’m sure you’ll create a mighty fine goose! Even if it’ll probably take ya a couple years longer than usual… 
+          Hm… still debatable whether this little fella here is a goose, but
+          after all the geese you’ve shown me before it could be worse. Ay don’t
+          gimme that look! You’re improvin’ little bumpkin, slowly but surely.
+          Just keep workin’ on yer skills and I’m sure you’ll create a mighty
+          fine goose! Even if it’ll probably take ya a couple years longer than
+          usual…
         </p>
         <p v-if="maxGoose > 40 && maxGoose <= 60">
-          Eh… that’s a goose alright but they’re just that y’know? Don’t have that little spark in their eyes, a beginnin’ of something special, something that would truly make them an impeccable little fella. A shame but what can ya do? Most geese I’ve seen in ma life, little bumpkin, have been like this one so I wouldn’t be ashamed per se.
+          Eh… that’s a goose alright but they’re just that y’know? Don’t have
+          that little spark in their eyes, a beginnin’ of something special,
+          something that would truly make them an impeccable little fella. A
+          shame but what can ya do? Most geese I’ve seen in ma life, little
+          bumpkin, have been like this one so I wouldn’t be ashamed per se.
         </p>
         <p v-if="maxGoose > 60 && maxGoose <= 80">
-          You’re gettin’ there little bumpkin with that goose over there! Just gotta keep at it for a bit longer. Haha! Ya sure are learnin’ faster than I thought. I’d never thought in ma life that someone like you could get this close to the levels of a professional like me, yet here ya are.
+          You’re gettin’ there little bumpkin with that goose over there! Just
+          gotta keep at it for a bit longer. Haha! Ya sure are learnin’ faster
+          than I thought. I’d never thought in ma life that someone like you
+          could get this close to the levels of a professional like me, yet here
+          ya are.
         </p>
         <p v-if="maxGoose > 80 && maxGoose <= 90">
-          Ooo… you’re gettin’ so close little bumpkin! I could feel it in ma bones. And I could tell ya ma bones have never lied before! Haha! Just trust me on this one little bumpkin, I have years of experience to back it up. I’m sure you’ll get the goose of your dreams soon if you keep at it!
+          Ooo… you’re gettin’ so close little bumpkin! I could feel it in ma
+          bones. And I could tell ya ma bones have never lied before! Haha! Just
+          trust me on this one little bumpkin, I have years of experience to
+          back it up. I’m sure you’ll get the goose of your dreams soon if you
+          keep at it!
         </p>
         <p v-if="maxGoose > 90 && maxGoose <= 95">
-          Oh my! Ain’t that a mighty fine goose ya got there! Just look at em! They’re pretty as a peach and just so polite, with a glimmer of something special in those eyes. See? I told ya you would succeed if ya worked hard enough. Look at how far you’ve come little bumpkin! Now I’ve seen geese better than this one, but that might be difficult even for you.
+          Oh my! Ain’t that a mighty fine goose ya got there! Just look at em!
+          They’re pretty as a peach and just so polite, with a glimmer of
+          something special in those eyes. See? I told ya you would succeed if
+          ya worked hard enough. Look at how far you’ve come little bumpkin! Now
+          I’ve seen geese better than this one, but that might be difficult even
+          for you.
         </p>
         <p v-if="maxGoose > 95 && maxGoose <= 99">
-          WOWZERS! I shoulda seen this one comin’ but you’ve exceeded all ma expectations little bumpkin. I’ve only seen a few geese in ma life as amazin’ as this one. And trust me I’ve seen plenty of geese, probably more than a sane person should, but I digress. Could there be a better goose out there? I’m not sure if it’s even possible but hm…
+          WOWZERS! I shoulda seen this one comin’ but you’ve exceeded all ma
+          expectations little bumpkin. I’ve only seen a few geese in ma life as
+          amazin’ as this one. And trust me I’ve seen plenty of geese, probably
+          more than a sane person should, but I digress. Could there be a better
+          goose out there? I’m not sure if it’s even possible but hm…
         </p>
         <p v-if="maxGoose > 99">
-          Oh. My. Heavens! Little bumpkin! I… I can’t believe it! I never thought I would ever see a goose as perfectly holy and divine as this one. Yet here’s one right before me. If there’s a god of geese out there I bet ma money that this one here would lead them all. Words can’t describe how proud I am of you. I deem this goose a Zoose out of 100.
+          Oh. My. Heavens! Little bumpkin! I… I can’t believe it! I never
+          thought I would ever see a goose as perfectly holy and divine as this
+          one. Yet here’s one right before me. If there’s a god of geese out
+          there I bet ma money that this one here would lead them all. Words
+          can’t describe how proud I am of you. I deem this goose a Zoose out of
+          100.
         </p>
       </div>
     </div>
-    <img src="@/assets/rate.png" height="100px" width="100px" @click="rating=!rating" style="position:absolute; top: 20px; left: 20px;" />
+    <img
+      src="@/assets/rate.png"
+      height="100px"
+      width="100px"
+      @click="rating = !rating"
+      style="position: absolute; top: 20px; left: 20px"
+    />
   </div>
 </template>
 
@@ -233,17 +303,17 @@ export default Vue.extend({
     breeder(firstGoose: Goose, secondGoose: Goose, sprite: string) {
       let hat = this.childGooseHelperHat(firstGoose, secondGoose);
       let goose = new Goose(
-          randomName(),
-          childGooseHelperHonk(firstGoose, secondGoose),
-          childGooseHelperWingspan(firstGoose, secondGoose),
-          childGooseHelperNeck(firstGoose, secondGoose),
-          hat.cute,
-          hat.cool,
-          hat.image,
-          hat.id,
-          true,
-          false
-        )
+        randomName(),
+        childGooseHelperHonk(firstGoose, secondGoose),
+        childGooseHelperWingspan(firstGoose, secondGoose),
+        childGooseHelperNeck(firstGoose, secondGoose),
+        hat.cute,
+        hat.cool,
+        hat.image,
+        hat.id,
+        true,
+        false
+      );
       window.setTimeout(() => goose.leave(this.geese), 210_000);
       this.geese.push(goose);
     },
@@ -255,6 +325,7 @@ export default Vue.extend({
         let gander = this.breedQueue[0];
         if (goose != gander) {
           if (goose.fertility == true && gander.fertility == true) {
+            gander.select();
             this.breeder(goose, gander, this.hats[0].image);
             goose.changeFert(false);
             gander.changeFert(false);
@@ -264,11 +335,11 @@ export default Vue.extend({
           } else {
             this.breedQueue.splice(0);
           }
-          gander.select();
+        } else {
+          goose.select();
         }
-        goose.select();
       }
-    }
+    },
   },
   data: function () {
     return {
@@ -310,8 +381,13 @@ export default Vue.extend({
   },
   computed: {
     maxGoose(): number {
-      return Math.floor(this.geese.reduce((acc, goose) => Math.max(acc, goose.cute, goose.cool), 0) / 4);
-    }
+      return Math.floor(
+        this.geese.reduce(
+          (acc, goose) => Math.max(acc, goose.cute, goose.cool),
+          0
+        ) / 4
+      );
+    },
   },
   mounted() {
     window.setTimeout(this.spawnGoose, 3_000);
