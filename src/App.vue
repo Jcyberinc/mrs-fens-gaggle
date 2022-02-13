@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <audio loop autoplay="true" src="@/assets/mrs-fens-gaggles-mastered.wav"></audio>
+    <div style="position:absolute; top: 20px; right: 20px;">
+    <audio controls loop autoplay="true" src="@/assets/mrs-fens-gaggles-mastered.wav"></audio>
+    </div>
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
