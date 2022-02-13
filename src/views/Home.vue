@@ -60,9 +60,7 @@
           z-index: 1000;
         "
       >
-        <p v-if="maxGoose <= 0">
-          Ya sure this ain’t a fucking duck little bumpkin?
-        </p>
+        <p v-if="maxGoose <= 0">Looks like ya didn't bring me a goose!</p>
         <p v-if="maxGoose > 0 && maxGoose <= 20">
           Ya sure that’s a goose you brought me there? Cause they look more like
           an odd mutant duck than a goose! Try again little bumpkin. I’m sure
@@ -333,9 +331,11 @@ export default Vue.extend({
             window.setTimeout(() => gander.changeFert(true), 60_000);
             this.breedQueue.splice(0);
           } else {
+            gander.select();
             this.breedQueue.splice(0);
           }
         } else {
+          this.breedQueue.splice(0);
           goose.select();
         }
       }
@@ -381,12 +381,13 @@ export default Vue.extend({
   },
   computed: {
     maxGoose(): number {
-      return Math.floor(
-        this.geese.reduce(
-          (acc, goose) => Math.max(acc, goose.cute, goose.cool),
-          0
-        ) / 4
-      );
+      if (this.breedQueue.length == 0) {
+        return 0;
+      } else {
+        let gander = this.breedQueue[0];
+        gander.select();
+        return Math.max(gander.cute, gander.cool) / 4;
+      }
     },
   },
   mounted() {
