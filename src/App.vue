@@ -80,3 +80,12 @@ main {
   max-width: 760px; margin: auto; 
 }
 </style>
+
+<script>
+    export default {
+        name: 'app',
+        created () {
+            document.title = "Ms. Fens' Gaggle";
+        }
+    }
+</script>
