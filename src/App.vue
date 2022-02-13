@@ -42,6 +42,19 @@
   margin-left:190px;
 }
 
+.statsandotherselected
+{
+  font-size: 20px;
+  color: white; 
+  background-color: rgba(136, 0, 0, 0.8);
+  border-radius: 10px;
+  padding: 10px;
+  padding-top: 0px;
+  margin-top: 30px;
+  position:absolute;
+  margin-left:190px;
+}
+
 .credits {
   font-size: 20px;
 
