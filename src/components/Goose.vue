@@ -7,7 +7,7 @@
     "
   >
     <span @mouseenter="hover = true" @mouseleave="hover = false">
-      <h3>{{ status() }} {{ name }}</h3>
+      <h3 :style="this.selected ? 'color: #ad0b00' : 'color: black'">{{ status() }} {{ name }}</h3>
       <img alt="Goose image" :src="sprite" height="150px"/>
     </span>
     <div :class="this.selected ? 'statsandotherselected' : 'statsandother'" v-if="hover">
